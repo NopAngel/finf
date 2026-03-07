@@ -1,0 +1,32 @@
+                         FinF
+
++------------------------------------------------------------------+
+
+	Fucking  Incredible  Node  Finder
+
+		By: NopAngel
+
+
+01000110 01101001 01101110 01000110 00100000 01000100 01100001 01110100 01100001 00100000 
+01010110 01100001 01101100 01110101 01100101 01001001 01101110 01100011 01110010 01100101 
+        01100100 01101001 01100010 01101100 01100101
+
++------------------------------------------------------------------+
+
+
+Basically, it's a simple tool that lets you view your hard drive statistics. It allows you to see how much free space you have and how much space is used, presented as a statistical overview.
+It should be noted that this only works in WSL1/2 and on a Linux machine (with any distribution).
+you only need `GCC` and `MAKE` to compile this project.
+
+
+Commands:
+
+./finf - : Displays the data table.
+
+./finf - t : Displays the data table as a progress bar.
+
+
+
+
+`Uploaded under the *GPL-2.0* license - NopAngel[Author]`
+

@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-// Colores ANSI
+// ansi colors
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
@@ -30,7 +30,9 @@ void print_bar(double percent) {
 
 bool is_real_disk(struct mntent *ent) {
     if (strncmp(ent->mnt_fsname, "/dev/", 5) == 0) return true;
-    if (strcmp(ent->mnt_type, "drvfs") == 0 || strcmp(ent->mnt_type, "9p") == 0) {
+    if (strcmp(ent->mnt_type, "drvfs") == 0 || strcmp(ent->mnt_type, "9p") == 0) { // for wsl2
+        /* 9p is used because WSL2 uses the 9p filesystem
+         */
         if (strncmp(ent->mnt_dir, "/mnt/", 5) == 0) return true;
     }
     if (strcmp(ent->mnt_dir, "/") == 0) return true;
@@ -60,7 +62,7 @@ int main(int argc, char *argv[]) {
                 if (total > 0) {
                     double percent = ((double)used / total) * 100.0;
                     
-                    // Color según el uso
+                    // Color according to use
                     if (percent > 90.0) printf(RED);
                     else if (percent > 70.0) printf(YELLOW);
                     else printf(GREEN);
